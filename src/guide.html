@@ -1,355 +1,355 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  @@include('./html/inc/meta.html',{
+	@@include('./html/inc/meta.html',{
 		"rootpath": "app",
-    "pagetitle": "guide"
-  })
+	"pagetitle": "guide"
+	})
 </head>
 <body>
-  <style>
-    .contents section + section {
-      margin-top:40px;
-    }
-    .contents h2 {
-      margin-bottom:20px;
-      padding:20px 0;
-      border-bottom:1px solid #e8e8e8;
-      font-size:20px;
-      font-weight:bold;
-      text-transform:capitalize;
-    }
-    .contents h3 {
-      padding:20px 0;
-      text-transform:capitalize;
-    }
-    .contents h3:before {
-      content:'* ';
-    }
-  </style>
+<style>
+	.contents section + section {
+	margin-top:40px;
+	}
+	.contents h2 {
+	margin-bottom:20px;
+	padding:20px 0;
+	border-bottom:1px solid #e8e8e8;
+	font-size:20px;
+	font-weight:bold;
+	text-transform:capitalize;
+	}
+	.contents h3 {
+	padding:20px 0;
+	text-transform:capitalize;
+	}
+	.contents h3:before {
+	content:'* ';
+	}
+</style>
 
-  <div class="wrap">
+<div class="wrap">
     @@include('./html/inc/header.html')
-
+	
     <!--: Start #contents -->
-    <div id="contents" class="contents">
-	    <h2>accordion</h2>
-	    <section>
-		    <div class="accordion js-accordion">
-          <div class="accordion-section">
-            <button type="button" aria-controls="acco-content1" aria-expanded="false">accordion1</button>
-            <div id="acco-content1" class="accordion-content">
-              contents1
-            </div>
-          </div>
-          <div class="accordion-section">
-            <button type="button" aria-controls="acco-content2" aria-expanded="false">accordion2</button>
-            <div id="acco-content2" class="accordion-content">
-              contents2
-            </div>
-          </div>
-			    <div class="accordion-section">
-				    <button type="button" aria-controls="acco-content3" aria-expanded="false">accordion3</button>
-				    <div id="acco-content3" class="accordion-content">
-					    contents3
-				    </div>
-			    </div>
-		    </div>
-		    <br>
-		    <button class="btn btn-tertiary apply plugin-btn" data-plugin="accordion">apply</button>
-		    <button class="btn btn-tertiary clear plugin-btn" data-plugin="accordion">clear</button>
-	    </section>
-	    <br>
-	
-	    <h2>dropdown</h2>
-	    <section>
-		    <div class="dropdown js-dropdown" data-placeholder="선택하세요.">
-			    <button type="button" id="dropdown" class="dropdown-btn" aria-haspopup="listbox" aria-expanded="false">SKT</button>
-			    <ul class="dropdown-list" role="listbox" aria-labelledby="dropdown" tabindex="-1">
-				    <li role="option" aria-selected="false"><button type="button" data-value="0_SKT">0_SKT</button></li>
-				    <li role="option" aria-selected="false"><button type="button" data-value="1_KT">1_KT</button></li>
-				    <li role="option" aria-selected="false"><button type="button" data-value="2_LG">2_LG U+</button></li>
-				    <li role="option" aria-selected="false"><button type="button" data-value="3_알뜰폰">3_알뜰폰</button></li>
-				    <li role="option" aria-selected="false"><button type="button" data-value="4_SKT">4_SKT</button></li>
-				    <li role="option" aria-selected="false"><button type="button" data-value="5_KT">5_KT</button></li>
-				    <li role="option" aria-selected="false"><button type="button" data-value="6_LG U+">6_LG U+</button></li>
-				    <li role="option" aria-selected="false"><button type="button" data-value="7_알뜰폰">7_알뜰폰</button></li>
-			    </ul>
-		    </div>
-		    <br>
-		    <button class="btn btn-tertiary apply plugin-btn" data-plugin="dropdown">apply</button>
-		    <button class="btn btn-tertiary clear plugin-btn" data-plugin="dropdown">clear</button>
-	    </section>
-	    <br>
-	
-	    <h2>tab</h2>
-	    <section>
-		    <div class="tab js-tab">
-			    <div class="tab-list" role="tablist">
-				    <button type="button" id="tab1" role="tab" aria-controls="tab-content1" aria-selected="false">tab1</button>
-				    <button type="button" id="tab2" role="tab" aria-controls="tab-content2" aria-selected="false">tab2</button>
-				    <button type="button" id="tab3" role="tab" aria-controls="tab-content3" aria-selected="false">tab3</button>
-			    </div>
-			    <div class="tab-content">
-				    <div id="tab-content1" class="content" role="tabpanel" aria-labelledby="tab1" tabindex="0" hidden>
-					    tab1 contents
-				    </div>
-				    <div id="tab-content2" class="content" role="tabpanel" aria-labelledby="tab2" tabindex="0" hidden>
-					    tab2 contents
-				    </div>
-				    <div id="tab-content3" class="content" role="tabpanel" aria-labelledby="tab3" tabindex="0" hidden>
-					    tab3 contents
-				    </div>
-			    </div>
-		    </div>
-		    <br>
-		    <button class="btn btn-tertiary apply plugin-btn" data-plugin="tab">apply</button>
-		    <button class="btn btn-tertiary clear plugin-btn" data-plugin="tab">clear</button>
-	    </section>
-	    <br>
-	
-	    <h2>paging</h2>
-	    <section>
-		    <div class="paging js-paging">
-			    <button type="button" class="paging-first" disabled><span>처음</span></button>
-			    <button type="button" class="paging-prev" disabled><span>이전</span></button>
-			    <div class="paging-list">
-				    <!--
-				    <a href="#" aria-current="page">1</a>
-				    <a href="#">2</a>
-				    <a href="#">3</a>
-				    <a href="#">4</a>
-				    <a href="#">5</a>
-				    <a href="#">6</a>
-				    <a href="#">7</a>
-				    <a href="#">8</a>
-				    <a href="#">9</a>
-				    <a href="#">10</a>
-				    -->
-			    </div>
-			    <button type="button" class="paging-next"><span>다음</span></button>
-			    <button type="button" class="paging-last"><span>마지막</span></button>
-		    </div>
-		    <br>
-		    <button class="btn btn-tertiary apply paging-btn" data-plugin="paging">apply</button>
-		    <button class="btn btn-tertiary clear paging-btn" data-plugin="paging">clear</button>
-	    </section>
-	    <br>
-	
-	    <h2>modal</h2>
-	    <section>
-		    <div>
-			    <button style="padding: 12px" type="button" class="modalBtn btn alert" aria-haspopup="dialog" aria-controls="pop-alert">alert</button>
-			    <button style="padding: 12px" type="button" class="modalBtn btn confirm" aria-haspopup="dialog" aria-controls="pop-confirm">confirm</button>
-			    <button style="padding: 12px" type="button" class="modalBtn btn modal" aria-haspopup="dialog" aria-controls="pop-modal">modal</button>
-			    <button style="padding: 12px" type="button" class="modalBtn btn full" aria-haspopup="dialog" aria-controls="pop-full">full</button>
-		    </div>
-		    <br>
+	<div id="contents" class="contents">
+		<h2>accordion</h2>
+		<section>
+			<div class="accordion js-accordion">
+			<div class="accordion-section">
+			<button type="button" aria-controls="acco-content1" aria-expanded="false">accordion1</button>
+			<div id="acco-content1" class="accordion-content">
+				contents1
+			</div>
+			</div>
+			<div class="accordion-section">
+			<button type="button" aria-controls="acco-content2" aria-expanded="false">accordion2</button>
+			<div id="acco-content2" class="accordion-content">
+				contents2
+			</div>
+			</div>
+				<div class="accordion-section">
+					<button type="button" aria-controls="acco-content3" aria-expanded="false">accordion3</button>
+					<div id="acco-content3" class="accordion-content">
+						contents3
+					</div>
+				</div>
+			</div>
+			<br>
+			<button class="btn btn-tertiary apply plugin-btn" data-plugin="accordion">apply</button>
+			<button class="btn btn-tertiary clear plugin-btn" data-plugin="accordion">clear</button>
+		</section>
+		<br>
 		
-		    <div id="pop-alert" class="layer" role="dialog" aria-modal="true" tabindex="-1">
-			    <div class="layer-wrap">
-				    <div class="title">alert title</div>
-				    <!--button class="close">close</button-->
-				    <div class="layer-content">
-					    alert contents
-				    </div>
-				    <div class="button-wrap">
-					    <button class="btn">ok</button>
-				    </div>
-			    </div>
-		    </div>
-		    <div id="pop-confirm" class="layer" role="dialog" aria-modal="true" tabindex="-1">
-			    <div class="layer-wrap">
-				    <div class="title">confirm title</div>
-				    <!--button class="close">close</button-->
-				    <div class="layer-content">
-					    confirm contents
-				    </div>
-				    <div class="button-wrap">
-					    <button class="btn">cancel</button>
-					    <button class="btn">confirm</button>
-				    </div>
-			    </div>
-		    </div>
-		    <div id="pop-modal" class="layer" role="dialog" aria-modal="true" tabindex="-1">
-			    <div class="layer-wrap">
-				    <div class="title">modal title</div>
-				    <button class="close">close</button>
-				    <div class="layer-content" style="overflow: auto; height: 200px">
-					    modal contents
-					    <br>scroll
-					    <br>scroll
-					    <br>scroll
-					    <br>scroll
-					    <br>scroll
-					    <br>scroll
-					    <br>scroll
-					    <br>scroll
-				    </div>
-			    </div>
-		    </div>
-		    <div id="pop-full" class="layer" role="dialog" aria-modal="true" tabindex="-1">
-			    <div class="layer-wrap full">
-				    <div class="title">full modal title</div>
-				    <button class="close">close</button>
-				    <div class="layer-content">
-					    full contents
-				    </div>
-			    </div>
-		    </div>
-	    </section>
-	
-	    <h2>input</h2>
-	    <section>
-		    <div>text, maxlength</div>
-		    <div class="js-input">
-			    <input type="text" id="input-text" class="" maxlength="5" placeholder="">
-		    </div>
-		    <div>number, comma</div>
-		    <div class="js-input">
-			    <input type="text" id="input-number" class="number comma" placeholder="">
-		    </div>
-		    <div>tel</div>
-		    <div class="js-input">
-			    <input type="text" id="input-tel" class="tel" maxlength="13" placeholder="">
-		    </div>
-		    <div>checkbox</div>
-		    <div class="js-input">
-			    <input type="checkbox" id="input-checkbox" checked>
-		    </div>
-		    <div>radio</div>
-		    <div class="js-input">
-			    <input type="radio" id="input-radio">
-		    </div>
-	    </section>
-	    
-	    <h2>swipe</h2>
-	    <section>
-		    <button class="btn btn-tertiary swipe on">body swipe - on</button>
-		    <button class="btn btn-tertiary swipe off">body swipe - off</button>
-		    <br>
-		    <br>
-		    <button class="btn btn-tertiary swipe clear">body swipe - clear</button>
-	    </section>
-	    
-	    <h2>block scroll</h2>
-	    <section>
-		    <button class="btn btn-tertiary block documentBody">blockScroll - block</button>
-		    <button class="btn btn-tertiary block documentBody scroll">blockScroll - scroll</button>
-		    <br>
-		    <br>
-		    <button class="btn btn-tertiary block window">blockScrollEvent - block</button>
-		    <button class="btn btn-tertiary block window scroll">blockScrollEvent - scroll</button>
-	    </section>
-	
-	    <h2>loading</h2>
-	    <section>
-		    <button class="btn loadingBtn">loading start</button>
-	    </section>
-	
-	    <h2>swiper</h2>
-	    <section>
-		    <!-- Slider main container -->
-		    <div class="swiper" style="height: 100px;">
-			    <!-- Additional required wrapper -->
-			    <div class="swiper-wrapper">
-				    <!-- Slides -->
-				    <div class="swiper-slide">Slide 1</div>
-				    <div class="swiper-slide">Slide 2</div>
-				    <div class="swiper-slide">Slide 3</div>
-				    ...
-			    </div>
-			    <!-- If we need pagination -->
-			    <div class="swiper-pagination"></div>
-			
-			    <!-- If we need navigation buttons -->
-			    <div class="swiper-button-prev"></div>
-			    <div class="swiper-button-next"></div>
-			
-			    <!-- If we need scrollbar -->
-			    <div class="swiper-scrollbar"></div>
-		    </div>
+		<h2>dropdown</h2>
+		<section>
+			<div class="dropdown js-dropdown" data-placeholder="선택하세요.">
+				<button type="button" id="dropdown" class="dropdown-btn" aria-haspopup="listbox" aria-expanded="false">SKT</button>
+				<ul class="dropdown-list" role="listbox" aria-labelledby="dropdown" tabindex="-1">
+					<li role="option" aria-selected="false"><button type="button" data-value="0_SKT">0_SKT</button></li>
+					<li role="option" aria-selected="false"><button type="button" data-value="1_KT">1_KT</button></li>
+					<li role="option" aria-selected="false"><button type="button" data-value="2_LG">2_LG U+</button></li>
+					<li role="option" aria-selected="false"><button type="button" data-value="3_알뜰폰">3_알뜰폰</button></li>
+					<li role="option" aria-selected="false"><button type="button" data-value="4_SKT">4_SKT</button></li>
+					<li role="option" aria-selected="false"><button type="button" data-value="5_KT">5_KT</button></li>
+					<li role="option" aria-selected="false"><button type="button" data-value="6_LG U+">6_LG U+</button></li>
+					<li role="option" aria-selected="false"><button type="button" data-value="7_알뜰폰">7_알뜰폰</button></li>
+				</ul>
+			</div>
+			<br>
+			<button class="btn btn-tertiary apply plugin-btn" data-plugin="dropdown">apply</button>
+			<button class="btn btn-tertiary clear plugin-btn" data-plugin="dropdown">clear</button>
+		</section>
+		<br>
 		
-		    <br>
-		    <p><a href="https://swiperjs.com/" target="_blank">https://swiperjs.com/</a></p>
-		    <br>
-	    </section>
-	
-	    <h2>datepicker (TOAST UI)</h2>
-	    <section>
-		    <div class="js-datepicker">
-		      <div id="tui-date-picker-wrapper"></div>
-			    <input type="text" id="datepicker" readonly>
-		    </div>
-		    <br>
-		    <button type="button" class="datepicker-btn btn btn-tertiary get">get</button>
-		    <button type="button" class="datepicker-btn btn btn-tertiary set">set (2023-12-31)</button>
-		    <button type="button" class="datepicker-btn btn btn-tertiary enable">enable</button>
-		    <button type="button" class="datepicker-btn btn btn-tertiary disable">disable</button>
-		    <button type="button" class="datepicker-btn btn btn-tertiary clear">clear</button>
-	    </section>
-	    
-	    <h2>postcode - Daum 우편번호 서비스</h2>
-	    <section>
-		    <div class="js-postcode">
-			    <div class="address">
-			      <input type="text" readonly>
-			    </div>
-			    <br>
-			    <div class="detail">
-				    <input type="text" name="" title="상세 주소 입력" placeholder="상세주소를 입력해주세요.">
-			    </div>
-			    <br>
-			    <button type="button" name="" class="btn btn-search">주소 검색</button>
-		    </div>
-	    </section>
-	    <br>
-	
-	    <h2>textarea</h2>
-	    <section>
-		    <div class="js-textarea">
-			    <textarea id="txt-field" name="txt-field" maxlength="10" cols="30" rows="10"></textarea>
-			    <span class="current-length">0</span>/<span class="total-length">100</span>
-		    </div>
-		    <br>
-		    <button class="btn btn-tertiary apply plugin-btn" data-plugin="textarea">apply</button>
-		    <button class="btn btn-tertiary clear plugin-btn" data-plugin="textarea">clear</button>
-	    </section>
-      <br>
-	
-	    <h2>countdown</h2>
-	    <section>
-        <div class="js-countdown">
-          <span class="time">00:00</span>
-        </div>
-        <br>
-        <button class="btn btn-tertiary apply plugin-btn" data-plugin="countdown">apply</button>
-        <button class="btn btn-tertiary clear plugin-btn" data-plugin="countdown">clear</button>
-        <button class="btn btn-tertiary countdown start">start</button>
-        <button class="btn btn-tertiary countdown stop">stop</button>
-      </section>
-	
-	    <h2>transform</h2>
-      <section>
-        <div class="transform obj" style="position: relative; width: 30px; height: 30px; background: #ddd"></div>
-        <br>
-        <button class="transform btn">transform start</button>
-      </section>
-	
-	    <h2>lottie</h2>
-      <section>
-        <div id="lottie" style="width: 100%; height: 500px"></div>
-        <button class="btn btn-tertiary lottie start">start</button>
-        <button class="btn btn-tertiary lottie pause">pause</button>
-        <button class="btn btn-tertiary lottie stop">stop</button>
-      </section>
-    </div>
+		<h2>tab</h2>
+		<section>
+			<div class="tab js-tab">
+				<div class="tab-list" role="tablist">
+					<button type="button" id="tab1" role="tab" aria-controls="tab-content1" aria-selected="false">tab1</button>
+					<button type="button" id="tab2" role="tab" aria-controls="tab-content2" aria-selected="false">tab2</button>
+					<button type="button" id="tab3" role="tab" aria-controls="tab-content3" aria-selected="false">tab3</button>
+				</div>
+				<div class="tab-content">
+					<div id="tab-content1" class="content" role="tabpanel" aria-labelledby="tab1" tabindex="0" hidden>
+						tab1 contents
+					</div>
+					<div id="tab-content2" class="content" role="tabpanel" aria-labelledby="tab2" tabindex="0" hidden>
+						tab2 contents
+					</div>
+					<div id="tab-content3" class="content" role="tabpanel" aria-labelledby="tab3" tabindex="0" hidden>
+						tab3 contents
+					</div>
+				</div>
+			</div>
+			<br>
+			<button class="btn btn-tertiary apply plugin-btn" data-plugin="tab">apply</button>
+			<button class="btn btn-tertiary clear plugin-btn" data-plugin="tab">clear</button>
+		</section>
+		<br>
+		
+		<h2>paging</h2>
+		<section>
+			<div class="paging js-paging">
+				<button type="button" class="paging-first" disabled><span>처음</span></button>
+				<button type="button" class="paging-prev" disabled><span>이전</span></button>
+				<div class="paging-list">
+					<!--
+					<a href="#" aria-current="page">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+					<a href="#">6</a>
+					<a href="#">7</a>
+					<a href="#">8</a>
+					<a href="#">9</a>
+					<a href="#">10</a>
+					-->
+				</div>
+				<button type="button" class="paging-next"><span>다음</span></button>
+				<button type="button" class="paging-last"><span>마지막</span></button>
+			</div>
+			<br>
+			<button class="btn btn-tertiary apply paging-btn" data-plugin="paging">apply</button>
+			<button class="btn btn-tertiary clear paging-btn" data-plugin="paging">clear</button>
+		</section>
+		<br>
+		
+		<h2>modal</h2>
+		<section>
+			<div>
+				<button style="padding: 12px" type="button" class="modalBtn btn alert" aria-haspopup="dialog" aria-controls="pop-alert">alert</button>
+				<button style="padding: 12px" type="button" class="modalBtn btn confirm" aria-haspopup="dialog" aria-controls="pop-confirm">confirm</button>
+				<button style="padding: 12px" type="button" class="modalBtn btn modal" aria-haspopup="dialog" aria-controls="pop-modal">modal</button>
+				<button style="padding: 12px" type="button" class="modalBtn btn full" aria-haspopup="dialog" aria-controls="pop-full">full</button>
+			</div>
+			<br>
+					
+			<div id="pop-alert" class="layer" role="dialog" aria-modal="true" tabindex="-1">
+				<div class="layer-wrap">
+					<div class="title">alert title</div>
+					<!--button class="close">close</button-->
+					<div class="layer-content">
+						alert contents
+					</div>
+					<div class="button-wrap">
+						<button class="btn">ok</button>
+					</div>
+				</div>
+			</div>
+			<div id="pop-confirm" class="layer" role="dialog" aria-modal="true" tabindex="-1">
+				<div class="layer-wrap">
+					<div class="title">confirm title</div>
+					<!--button class="close">close</button-->
+					<div class="layer-content">
+						confirm contents
+					</div>
+					<div class="button-wrap">
+						<button class="btn">cancel</button>
+						<button class="btn">confirm</button>
+					</div>
+				</div>
+			</div>
+			<div id="pop-modal" class="layer" role="dialog" aria-modal="true" tabindex="-1">
+				<div class="layer-wrap">
+					<div class="title">modal title</div>
+					<button class="close">close</button>
+					<div class="layer-content" style="overflow: auto; height: 200px">
+						modal contents
+						<br>scroll
+						<br>scroll
+						<br>scroll
+						<br>scroll
+						<br>scroll
+						<br>scroll
+						<br>scroll
+						<br>scroll
+					</div>
+				</div>
+			</div>
+			<div id="pop-full" class="layer" role="dialog" aria-modal="true" tabindex="-1">
+				<div class="layer-wrap full">
+					<div class="title">full modal title</div>
+					<button class="close">close</button>
+					<div class="layer-content">
+						full contents
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<h2>input</h2>
+		<section>
+			<div>text, maxlength</div>
+			<div class="js-input">
+				<input type="text" id="input-text" class="" maxlength="5" placeholder="">
+			</div>
+			<div>number, comma</div>
+			<div class="js-input">
+				<input type="text" id="input-number" class="number comma" placeholder="">
+			</div>
+			<div>tel</div>
+			<div class="js-input">
+				<input type="text" id="input-tel" class="tel" maxlength="13" placeholder="">
+			</div>
+			<div>checkbox</div>
+			<div class="js-input">
+				<input type="checkbox" id="input-checkbox" checked>
+			</div>
+			<div>radio</div>
+			<div class="js-input">
+				<input type="radio" id="input-radio">
+			</div>
+		</section>
+		
+		<h2>swipe</h2>
+		<section>
+			<button class="btn btn-tertiary swipe on">body swipe - on</button>
+			<button class="btn btn-tertiary swipe off">body swipe - off</button>
+			<br>
+			<br>
+			<button class="btn btn-tertiary swipe clear">body swipe - clear</button>
+		</section>
+		
+		<h2>block scroll</h2>
+		<section>
+			<button class="btn btn-tertiary block documentBody">blockScroll - block</button>
+			<button class="btn btn-tertiary block documentBody scroll">blockScroll - scroll</button>
+			<br>
+			<br>
+			<button class="btn btn-tertiary block window">blockScrollEvent - block</button>
+			<button class="btn btn-tertiary block window scroll">blockScrollEvent - scroll</button>
+		</section>
+		
+		<h2>loading</h2>
+		<section>
+			<button class="btn loadingBtn">loading start</button>
+		</section>
+		
+		<h2>swiper</h2>
+		<section>
+			<!-- Slider main container -->
+			<div class="swiper" style="height: 100px;">
+				<!-- Additional required wrapper -->
+				<div class="swiper-wrapper">
+					<!-- Slides -->
+					<div class="swiper-slide">Slide 1</div>
+					<div class="swiper-slide">Slide 2</div>
+					<div class="swiper-slide">Slide 3</div>
+					...
+				</div>
+				<!-- If we need pagination -->
+				<div class="swiper-pagination"></div>
+			
+				<!-- If we need navigation buttons -->
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			
+				<!-- If we need scrollbar -->
+				<div class="swiper-scrollbar"></div>
+			</div>
+		
+			<br>
+			<p><a href="https://swiperjs.com/" target="_blank">https://swiperjs.com/</a></p>
+			<br>
+		</section>
+		
+		<h2>datepicker (TOAST UI)</h2>
+		<section>
+			<div class="js-datepicker">
+				<div id="tui-date-picker-wrapper"></div>
+				<input type="text" id="datepicker" readonly>
+			</div>
+			<br>
+			<button type="button" class="datepicker-btn btn btn-tertiary get">get</button>
+			<button type="button" class="datepicker-btn btn btn-tertiary set">set (2023-12-31)</button>
+			<button type="button" class="datepicker-btn btn btn-tertiary enable">enable</button>
+			<button type="button" class="datepicker-btn btn btn-tertiary disable">disable</button>
+			<button type="button" class="datepicker-btn btn btn-tertiary clear">clear</button>
+		</section>
+		
+		<h2>postcode - Daum 우편번호 서비스</h2>
+		<section>
+			<div class="js-postcode">
+				<div class="address">
+					<input type="text" readonly>
+				</div>
+				<br>
+				<div class="detail">
+					<input type="text" name="" title="상세 주소 입력" placeholder="상세주소를 입력해주세요.">
+				</div>
+				<br>
+				<button type="button" name="" class="btn btn-search">주소 검색</button>
+			</div>
+		</section>
+		<br>
+		
+		<h2>textarea</h2>
+		<section>
+			<div class="js-textarea">
+				<textarea id="txt-field" name="txt-field" maxlength="10" cols="30" rows="10"></textarea>
+				<span class="current-length">0</span>/<span class="total-length">100</span>
+			</div>
+			<br>
+			<button class="btn btn-tertiary apply plugin-btn" data-plugin="textarea">apply</button>
+			<button class="btn btn-tertiary clear plugin-btn" data-plugin="textarea">clear</button>
+		</section>
+		<br>
+		
+		<h2>countdown</h2>
+		<section>
+		<div class="js-countdown">
+			<span class="time">00:00</span>
+		</div>
+		<br>
+		<button class="btn btn-tertiary apply plugin-btn" data-plugin="countdown">apply</button>
+		<button class="btn btn-tertiary clear plugin-btn" data-plugin="countdown">clear</button>
+		<button class="btn btn-tertiary countdown start">start</button>
+		<button class="btn btn-tertiary countdown stop">stop</button>
+		</section>
+		
+		<h2>transform</h2>
+		<section>
+		<div class="transform obj" style="position: relative; width: 30px; height: 30px; background: #ddd"></div>
+		<br>
+		<button class="transform btn">transform start</button>
+		</section>
+		
+		<h2>lottie</h2>
+		<section>
+		<div id="lottie" style="width: 100%; height: 500px"></div>
+		<button class="btn btn-tertiary lottie start">start</button>
+		<button class="btn btn-tertiary lottie pause">pause</button>
+		<button class="btn btn-tertiary lottie stop">stop</button>
+		</section>
+	</div>
     <!--: End #contents -->
+	
+	@@include('./html/inc/footer.html')
+	</div>
 
-  @@include('./html/inc/footer.html')
-  </div>
-  
-  <!-- lib -------------------------------------------------------------------------------->
+	<!-- lib -------------------------------------------------------------------------------->
 	<!-- tui-datepicker -->
 	<script src="/app/lib/tui-date-picker.min.js"></script>
 	<link rel="stylesheet" href="/app/lib/tui-date-picker.min.css">
@@ -363,11 +363,11 @@
 	
 	<!-- lottie -->
 	<script src="/app/lib/lottie.min.js"></script>
-
-  	<!-- App -->
+	
+	<!-- App -->
 	<script type="module" src="/app/js/App.js"></script>
 	<script type="module" src="/app/js/component.js"></script>
-
+	
 	<script>
     	/** document ready */
 		window.addEventListener('DOMContentLoaded', e => {
@@ -652,7 +652,7 @@
 				},
 				transform () {
 					let $transform = document.querySelector('.transform.obj')
-
+					
 					document.querySelector('.transform.btn').addEventListener('click', e => {
 						$transform.transform({
 							transform: `translate3d(500px, 0px, 0px) scaleX(1.5) scaleY(1.5)`,
@@ -687,7 +687,7 @@
 			}
 		}
 	</script>
-  
+	
 	<script>
 		window.addEventListener('DOMContentLoaded', e => {
 		})
