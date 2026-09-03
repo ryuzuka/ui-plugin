@@ -30,7 +30,7 @@
     "gulp-file-include": "^2.2.2",
     "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
-    "node-sass": "^9.0.0"
+    "sass": "^1.90.0"
   },
   "browserslist": [
     "> 1%",
@@ -38,5 +38,10 @@
     "safari >= 9",
     "android >= 4.4",
     "not ie <= 10"
-  ]
+  ],
+  "allowScripts": {
+    "node-sass@9.0.0": true,
+    "core-js@2.6.12": true,
+    "es5-ext@0.10.64": true
+  }
 }

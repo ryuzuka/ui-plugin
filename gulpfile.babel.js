@@ -24,13 +24,14 @@ const paths = {
 
 const clean = () => {return del(['dist'])}
 const server = browserSync.create()
-const sass = require('gulp-sass')(require('node-sass'))
+const sass = require('gulp-sass')(require('sass'))
 const scssOptions = { // Sass compile option
-  outputStyle: 'compact',
+  outputStyle: 'expanded',
   indentType: 'space',
   indentWidth: 2,
   precision: 6,
-  sourceComments: false
+  sourceComments: false,
+  silenceDeprecations: ['legacy-js-api', 'import']
 }
 const htmlIncludeOptions = {
   prefix: '@@',
